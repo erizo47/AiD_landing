@@ -11,7 +11,7 @@ class Accordion {
     this.animation = null;
     // Store if the element is closing
     this.isClosing = false;
-    // Store if the element is expanding
+    // Store if the element is expanding  
     this.isExpanding = false;
     // Detect user clicks on the summary element
     this.summary.addEventListener('click', (e) => this.onClick(e));
@@ -140,57 +140,57 @@ function nav () {
   })
 }
 
-function addswithc() {
-  let a = document.getElementsByClassName('switcher')
-  let b = document.getElementsByClassName('team__cards')
-  a[0].addEventListener('click', (e) => {
-    a[0].classList.add('switcher__active')
-    a[1].classList.remove('switcher__active')
-    b[1].classList.add('team__cards__hidden')
-    b[0].classList.remove('team__cards__hidden')
-  })
-  a[1].addEventListener('click', (e) => {
-    a[1].classList.add('switcher__active')
-    a[0].classList.remove('switcher__active')
-    b[1].classList.remove('team__cards__hidden')
-    b[0].classList.add('team__cards__hidden')
-  })
-}
+// function addswithc() {
+//   let a = document.getElementsByClassName('switcher')
+//   let b = document.getElementsByClassName('team__cards')
+//   a[0].addEventListener('click', (e) => {
+//     a[0].classList.add('switcher__active')
+//     a[1].classList.remove('switcher__active')
+//     b[1].classList.add('team__cards__hidden')
+//     b[0].classList.remove('team__cards__hidden')
+//   })
+//   a[1].addEventListener('click', (e) => {
+//     a[1].classList.add('switcher__active')
+//     a[0].classList.remove('switcher__active')
+//     b[1].classList.remove('team__cards__hidden')
+//     b[0].classList.add('team__cards__hidden')
+//   })
+// }
 
-function switchTeamMob() {
-  let a = document.getElementsByClassName('switcher')
-  let b = document.getElementsByClassName('team_cards_mob')
-  a[0].addEventListener('click', (e) => {
-    a[0].classList.add('switcher__active')
-    a[1].classList.remove('switcher__active')
-    b[1].classList.add('team_cards_mob_hidden')
-    b[0].classList.remove('team_cards_mob_hidden')
-    team_member_img.forEach((e)=> {
-      e.classList.remove('active_team_img')
-    })
-    team_member_img[0].classList.add('active_team_img');
-    team_member_item.forEach((e)=> {
-      e.classList.remove('active_team_item')
-    })
-    team_member_item[0].classList.add('active_team_item');
+// function switchTeamMob() {
+//   let a = document.getElementsByClassName('switcher')
+//   let b = document.getElementsByClassName('team_cards_mob')
+//   a[0].addEventListener('click', (e) => {
+//     a[0].classList.add('switcher__active')
+//     a[1].classList.remove('switcher__active')
+//     b[1].classList.add('team_cards_mob_hidden')
+//     b[0].classList.remove('team_cards_mob_hidden')
+//     team_member_img.forEach((e)=> {
+//       e.classList.remove('active_team_img')
+//     })
+//     team_member_img[0].classList.add('active_team_img');
+//     team_member_item.forEach((e)=> {
+//       e.classList.remove('active_team_item')
+//     })
+//     team_member_item[0].classList.add('active_team_item');
 
-  })
-  a[1].addEventListener('click', (e) => {
-    a[1].classList.add('switcher__active')
-    a[0].classList.remove('switcher__active')
-    b[1].classList.remove('team_cards_mob_hidden')
-    b[0].classList.add('team_cards_mob_hidden')
-    team_member_img.forEach((e)=> {
-      e.classList.remove('active_team_img')
-    })
-    team_member_img[4].classList.add('active_team_img');
-    team_member_item.forEach((e)=> {
-      e.classList.remove('active_team_item')
-    })
-    team_member_item[4].classList.add('active_team_item');
+//   })
+//   a[1].addEventListener('click', (e) => {
+//     a[1].classList.add('switcher__active')
+//     a[0].classList.remove('switcher__active')
+//     b[1].classList.remove('team_cards_mob_hidden')
+//     b[0].classList.add('team_cards_mob_hidden')
+//     team_member_img.forEach((e)=> {
+//       e.classList.remove('active_team_img')
+//     })
+//     team_member_img[4].classList.add('active_team_img');
+//     team_member_item.forEach((e)=> {
+//       e.classList.remove('active_team_item')
+//     })
+//     team_member_item[4].classList.add('active_team_item');
 
-  })
-}
+//   })
+// }
 
 let team_member_img = document.querySelectorAll('.cards_mob_img');
 let team_member_item = document.querySelectorAll('.cards_mob_item');
@@ -212,12 +212,106 @@ function switchActiveTeamMember() {
   
 }
 
+const module_items = document.querySelectorAll('.module_item');
+const viewer = document.getElementById('viewer');
+const view_images = document.querySelectorAll('.view_images');
+const markup_btn = document.getElementById('markup_btn');
+
+let view_container = document.getElementById('view_lung_nodules');
+let markUp = true;
+
+let viewer_background = ['#262626', '#252525'];
+
+const screenWidth = window.screen.width
+const module_text = document.querySelectorAll('.module_text');
+
+function removeViewImagesActive() {
+  [...view_images].forEach((el) => el.classList.remove('view_images_active'));
+  markUp = true;
+  view_container.firstElementChild.style.opacity = 1;
+  view_container.lastElementChild.style.opacity = 0;
+  view_container.classList.add('view_images_active');
+  markup_btn.textContent = 'Hide the markup';
+  viewer.style.background = viewer_background[0];
+
+}
+
+function switchActiveModule() {
+  module_items.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      [...module_items].forEach((el) => el.classList.remove('module_active'));
+      if (screenWidth < 861) {
+        [...module_text].forEach((el) => el.style.display = 'none');
+      }
+      let tar = e.target.closest('.module_item');
+      let tar_id = document.getElementById(tar.id);
+      tar_id.classList.add('module_active');
+
+      switch (tar.id) {
+        case "lung_nodules":
+          view_container = document.getElementById('view_lung_nodules');
+          viewer_background = ['#262626', '#252525'];
+          removeViewImagesActive();
+
+          break;
+        case "covid_19":
+          view_container = document.getElementById('view_covid_19');
+          viewer_background = ['#262626', '#151515'];
+          removeViewImagesActive();
+          break;
+        case "hypertension":
+          view_container = document.getElementById('view_hypertension');
+          viewer_background = ['#000000', '#000000'];
+          removeViewImagesActive();
+          break;
+        case "hydrothorax":
+          view_container = document.getElementById('view_hydrothorax');
+          viewer_background = ['#000000', '#000000'];
+          removeViewImagesActive();
+          break;
+        case "osteoporosis":
+          view_container = document.getElementById('view_osteoporosis');
+          viewer_background = ['#000000', '#000000'];
+          removeViewImagesActive();
+          break;
+        case "lumbar_spine":
+          view_container = document.getElementById('view_lumbar_spine');
+          viewer_background = ['#000000', '#000000'];
+          removeViewImagesActive();
+          break;
+      }
+
+    })
+  })
+}
+
+function switchMarkUp () {
+ if (markUp) {
+    markUp = false;
+    view_container.firstElementChild.style.opacity = 0;
+    view_container.lastElementChild.style.opacity = 1;
+    viewer.style.background = viewer_background[1];
+    markup_btn.textContent = 'Show the markup';
+
+ } else {
+    markUp = true;
+    view_container.firstElementChild.style.opacity = 1;
+    view_container.lastElementChild.style.opacity = 0;
+    viewer.style.background = viewer_background[0];
+    markup_btn.textContent = 'Hide the markup';
+
+ }
+}
+
+
+
 let phoneMask = IMask(
   document.getElementById('phone'), {
     mask: '+{0}(000)000-00-00'
   });
 
 nav()
-addswithc()
-switchTeamMob()
-switchActiveTeamMember()
+// addswithc()
+// switchTeamMob()
+// switchActiveTeamMember()
+switchActiveModule()

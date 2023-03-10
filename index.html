@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_prefix.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -31,7 +31,6 @@
                         <li class="menu__item"><a href="#about" class="menu__link fs-regular">About us</a></li>
                         <li class="menu__item"><a href="#benefits" class="menu__link fs-regular">Benefits</a></li>
                         <li class="menu__item"><a href="#capabilities" class="menu__link fs-regular">Capabilities</a></li>
-                        <li class="menu__item"><a href="#team" class="menu__link fs-regular">Team</a></li>
                     </ul>
 
                 </nav>
@@ -52,7 +51,6 @@
                 <li class="mob_nav_item"><a href="#about" class="menu__link fs-regular">About us</a></li>
                 <li class="mob_nav_item"><a href="#benefits" class="menu__link fs-regular">Benefits</a></li>
                 <li class="mob_nav_item"><a href="#capabilities" class="menu__link fs-regular">Capabilities</a></li>
-                <li class="mob_nav_item"><a href="#team" class="menu__link fs-regular">Team</a></li>
           </ul>
         </header>
         <main class="main">
@@ -75,8 +73,7 @@
             </div>
             <div class="background__graphic__element"></div>
             <img class="background__graphic__vector" src="./images//background_vector.png" />
-            <!-- <div class="background__blur__1"> <object data="images/Ellipse 40.svg" type="image/svg+xml"></object> </div>
-            <div class="background__blur__2"><object data="images/Ellipse 39.svg" type="image/svg+xml"></object></div> -->
+            
             <div class="separation__block wow fadeIn" data-wow-duration="1s" data-wow-iteration="1" id="hiw">
                 <div class="separation__heading">How it works?</div>
                 <p class="separation__main__text"> <span class="mask_try_to_use">Try to use</span> our product right now
@@ -84,6 +81,8 @@
                 <p class="separation__subtext">You can choose the pathology of interest and study the functionality 
                     our product right now</p>
             </div>
+
+            
             <div class="viewer__container wow fadeIn" data-wow-duration="1s" data-wow-iteration="1">
                 <div class="choose__module">
 
@@ -109,12 +108,12 @@
                         </div>
                     </div>
                     <div class="module_list">
-                        <div class="module_item">
-                            <p class="module_name">Covid-19</p>
+                        <div class="module_item module_active" id="lung_nodules">
+                            <p class="module_name">[CT] Lung Nodules</p>
                             <div class="module_accuracy">
                                 <div class="module_accuracy_item">
                                     <div class="small__circle"></div>
-                                    <p class="accuracy_title">94%</p>
+                                    <p class="accuracy_title">88%</p>
                                 </div>
                                 <div class="module_accuracy_item">
                                     <svg class="small_triangle" width="15" height="13" viewBox="0 0 15 13" fill="none"
@@ -122,22 +121,25 @@
                                         <path
                                             d="M6.43192 0.732942C6.81682 0.0662751 7.77908 0.066274 8.16398 0.732941L14.2458 11.267C14.6307 11.9337 14.1496 12.767 13.3798 12.767H1.21609C0.446291 12.767 -0.0348354 11.9337 0.350065 11.267L6.43192 0.732942Z" />
                                     </svg>
-                                    <p class="accuracy_title">100%</p>
+                                    <p class="accuracy_title">98%</p>
 
                                 </div>
                                 <div class="module_accuracy_item">
                                     <div class="small__square"></div>
-                                    <p class="accuracy_title">30%</p>
+                                    <p class="accuracy_title">96%</p>
 
                                 </div>
                             </div>
+                            <p class="module_text">Рак легких (КТ): Сервис автоматически распознает новообразования в легких по КТ грудной клетки, определяет их положение и размер.
+                                <br>Метрики качества: Чувствительность - 0,96 Специфичность - 0,98 Точность - 0,88</p>
                         </div>
-                        <div class="module_item">
-                            <p class="module_name">Covid-19</p>
+
+                        <div class="module_item" id="covid_19">
+                            <p class="module_name">[CT] Covid-19</p>
                             <div class="module_accuracy">
                                 <div class="module_accuracy_item">
                                     <div class="small__circle"></div>
-                                    <p class="accuracy_title">94%</p>
+                                    <p class="accuracy_title">92%</p>
                                 </div>
                                 <div class="module_accuracy_item">
                                     <svg class="small_triangle" width="15" height="13" viewBox="0 0 15 13" fill="none"
@@ -150,17 +152,19 @@
                                 </div>
                                 <div class="module_accuracy_item">
                                     <div class="small__square"></div>
-                                    <p class="accuracy_title">30%</p>
+                                    <p class="accuracy_title">90%</p>
 
                                 </div>
                             </div>
+                            <p class="module_text">COVID-19 (КТ): Сервис определяет целевую патологию и подсчитывает процента поражения легочной паренхимы.
+                                <br>Метрики качества: Чувствительность - 0,90 Специфичность - 1 Точность - 0,92</p>
                         </div>
-                        <div class="module_item">
-                            <p class="module_name">Covid-19</p>
+                        <div class="module_item" id="hypertension">
+                            <p class="module_name">[CT] Hypertension</p>
                             <div class="module_accuracy">
                                 <div class="module_accuracy_item">
                                     <div class="small__circle"></div>
-                                    <p class="accuracy_title">94%</p>
+                                    <p class="accuracy_title">100%</p>
                                 </div>
                                 <div class="module_accuracy_item">
                                     <svg class="small_triangle" width="15" height="13" viewBox="0 0 15 13" fill="none"
@@ -173,17 +177,19 @@
                                 </div>
                                 <div class="module_accuracy_item">
                                     <div class="small__square"></div>
-                                    <p class="accuracy_title">30%</p>
+                                    <p class="accuracy_title">100%</p>
 
                                 </div>
                             </div>
+                            <p class="module_text">Легочная гипертензия (КТ): Модуль измеряет диаметр легочного ствола.
+                                <br>Метрики качества: Чувствительность - 1 Специфичность - 1 Точность - 1</p>
                         </div>
-                        <div class="module_item">
-                            <p class="module_name">Covid-19</p>
+                        <div class="module_item" id="hydrothorax">
+                            <p class="module_name">[CT] Hydrothorax</p>
                             <div class="module_accuracy">
                                 <div class="module_accuracy_item">
                                     <div class="small__circle"></div>
-                                    <p class="accuracy_title">94%</p>
+                                    <p class="accuracy_title">100%</p>
                                 </div>
                                 <div class="module_accuracy_item">
                                     <svg class="small_triangle" width="15" height="13" viewBox="0 0 15 13" fill="none"
@@ -196,17 +202,44 @@
                                 </div>
                                 <div class="module_accuracy_item">
                                     <div class="small__square"></div>
-                                    <p class="accuracy_title">30%</p>
+                                    <p class="accuracy_title">100%</p>
 
                                 </div>
                             </div>
+                            <p class="module_text">Гидроторакс (КТ): Модуль определяет скопления избыточной жидкости в плевральной полости
+                                <br>Метрики качества: Чувствительность - 1 Специфичность - 1 Точность - 1</p>
                         </div>
-                        <div class="module_item">
-                            <p class="module_name">Covid-19</p>
+                        <div class="module_item" id="osteoporosis">
+                            <p class="module_name">[CT] Osteoporosis</p>
                             <div class="module_accuracy">
                                 <div class="module_accuracy_item">
                                     <div class="small__circle"></div>
-                                    <p class="accuracy_title">94%</p>
+                                    <p class="accuracy_title">95%</p>
+                                </div>
+                                <div class="module_accuracy_item">
+                                    <svg class="small_triangle" width="15" height="13" viewBox="0 0 15 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.43192 0.732942C6.81682 0.0662751 7.77908 0.066274 8.16398 0.732941L14.2458 11.267C14.6307 11.9337 14.1496 12.767 13.3798 12.767H1.21609C0.446291 12.767 -0.0348354 11.9337 0.350065 11.267L6.43192 0.732942Z" />
+                                    </svg>
+                                    <p class="accuracy_title">92%</p>
+
+                                </div>
+                                <div class="module_accuracy_item">
+                                    <div class="small__square"></div>
+                                    <p class="accuracy_title">98%</p>
+
+                                </div>
+                            </div>
+                            <p class="module_text">Остеопороз (КТ): Модуль предназначен для автоматического поиска компрессионных переломов позвонков грудного и поясничного отделов позвоночника, а также вычисления плотности позвонков для выявления остеопении/остеопороза.
+                                <br>Метрики качества: Чувствительность - 0,98 Специфичность - 0,92 Точность - 0,95</p>
+                        </div>
+                        <div class="module_item" id="lumbar_spine">
+                            <p class="module_name">[MRT] Lumbar spine</p>
+                            <div class="module_accuracy">
+                                <div class="module_accuracy_item">
+                                    <div class="small__circle"></div>
+                                    <p class="accuracy_title">95%</p>
                                 </div>
                                 <div class="module_accuracy_item">
                                     <svg class="small_triangle" width="15" height="13" viewBox="0 0 15 13" fill="none"
@@ -219,20 +252,51 @@
                                 </div>
                                 <div class="module_accuracy_item">
                                     <div class="small__square"></div>
-                                    <p class="accuracy_title">30%</p>
+                                    <p class="accuracy_title">94%</p>
 
                                 </div>
                             </div>
+                            <p class="module_text">Поясничный отдел позвоночника (МРТ): определения размеров протрузий/экструзий в пояснично-крестцовом отделе позвоночника, определения наличия стеноза позвоночного канала.
+                                <br>Метрики качества: Чувствительность - 0,94 Специфичность - 1 Точность - 0,95</p>
                         </div>
                     </div>
 
 
                 </div>
-                <div class="viewer">
-                    <img src="" alt="" loading="lazy" id="imageViewer" >
-                    <input type="range" min="0" max="360" value="0" id="imageSlider" oninput="getImage(this.value)">
+                <div class="view_container">
+                    <div class="viewer" id="viewer">
+                        <div class="view_images view_images_active" id="view_lung_nodules">
+                            <img src="/images/viewer/lung_nodules.png" alt="lung_nodules" class="view_image">
+                            <img src="/images/viewer/lung_nodules_0.png" alt="lung_nodules_0" class="view_image">
+                        </div>
+                        <div class="view_images" id="view_covid_19">
+                            <img src="/images/viewer/covid_19.png" alt="covid_19" loading="lazy" class="view_image">
+                            <img src="/images/viewer/covid_19_0.png" alt="covid_19_0" loading="lazy" class="view_image">
+                        </div>
+                        <div class="view_images" id="view_hypertension">
+                            <img src="/images/viewer/hypertension.png" alt="hypertension" loading="lazy" class="view_image">
+                            <img src="/images/viewer/hypertension_0.png" alt="hypertension" loading="lazy" class="view_image">
+                        </div>
+                        <div class="view_images" id="view_hydrothorax">
+                            <img src="/images/viewer/hydrothorax.png" alt="hydrothorax" loading="lazy" class="view_image">
+                            <img src="/images/viewer/hydrothorax_0.png" alt="hydrothorax" loading="lazy" class="view_image">
+                        </div>
+                        <div class="view_images" id="view_osteoporosis">
+                            <img src="/images/viewer/osteoporosis.png" alt="osteoporosis" loading="lazy" class="view_image">
+                            <img src="/images/viewer/osteoporosis_0.png" alt="osteoporosis" loading="lazy" class="view_image">
+                        </div>
+                        <div class="view_images" id="view_lumbar_spine">
+                            <img src="/images/viewer/lumbar_spine.png" alt="lumbar_spine" loading="lazy" class="view_image">
+                            <img src="/images/viewer/lumbar_spine_0.png" alt="lumbar_spine" loading="lazy" class="view_image">
+                        </div>
+                        
+                    </div>
+                    <button onclick="switchMarkUp()" id="markup_btn" class="markup_btn">Hide the markup</button>
                 </div>
+                
             </div>
+
+
             <div class="about_us__block wow fadeIn" data-wow-duration="1s" data-wow-iteration="1" id="about">
                 <div class="separation__block">
                     <div class="separation__heading">About us</div>
@@ -251,7 +315,7 @@
                     <p class="ourgoal__subtext">We are sure that in the near future AI will become an indispensable
                         assistant to a radiologist, as self-evident as an X-ray machine once was.</p>
                     <button class="ourgoal__button">
-                        <a class="ourgoal__link" href="">Become a partner</a>
+                        <a class="ourgoal__link" href="#contact">Become a partner</a>
                     </button>
                 </div>
             </div>
@@ -415,142 +479,7 @@
                     </details>                   
                 </div>
             </div>
-            <div class="separation__block wow fadeIn" data-wow-duration="1s" data-wow-iteration="1" id="team">
-                <div class="separation__heading">Team</div>
-                <p class="separation__main__text"> Our team <span class="mask_consist_of_professionals">consists of
-                        professionals</span> the field of Ai and medicine</p>
-            </div>
-            <div class="team__container wow fadeIn" data-wow-duration="1s" data-wow-iteration="1">
-                <div class="team__switcher">
-                    <button class="switcher switcher__active">Developers</button>
-                    <button class="switcher">Medical experts</button>
-                </div>
-                <div class="team__cards">
-                    <div class="team__card">
-                        <div class="team__image">
-
-                        </div>
-                        <p class="team_main_text">Кирилл Лопатин</p>
-                        <p class="team__subtext fs-regular">Connected to AI Diagnostic services simultaneously</p>
-                    </div>
-                    <div class="team__card">
-                        <div class="team__image">
-
-                        </div>
-                        <p class="team_main_text">Кирилл Лопатин</p>
-                        <p class="team__subtext fs-regular">Connected to AI Diagnostic services simultaneously</p>
-                    </div>
-                    <div class="team__card">
-                        <div class="team__image">
-
-                        </div>
-                        <p class="team_main_text">Кирилл Лопатин</p>
-                        <p class="team__subtext fs-regular">Connected to AI Diagnostic services simultaneously</p>
-                    </div>
-                    <div class="team__card">
-                        <div class="team__image">
-
-                        </div>
-                        <p class="team_main_text">Кирилл Лопатин</p>
-                        <p class="team__subtext fs-regular">Connected to AI Diagnostic services simultaneously</p>
-                    </div>
-                </div>
-                <div class="team__cards team__cards__hidden">
-                    <div class="team__card">
-                        <div class="team__image">
-
-                        </div>
-                        <p class="team_main_text">НЕ Кирилл Лопатин</p>
-                        <p class="team__subtext fs-regular">Connected to AI Diagnostic services simultaneously</p>
-                    </div>
-                    <div class="team__card">
-                        <div class="team__image">
-
-                        </div>
-                        <p class="team_main_text">НЕ Кирилл Лопатин</p>
-                        <p class="team__subtext fs-regular">Connected to AI Diagnostic services simultaneously</p>
-                    </div>
-                    <div class="team__card">
-                        <div class="team__image">
-
-                        </div>
-                        <p class="team_main_text">НЕ Кирилл Лопатин</p>
-                        <p class="team__subtext fs-regular">Connected to AI Diagnostic services simultaneously</p>
-                    </div>
-                    <div class="team__card">
-                        <div class="team__image">
-
-                        </div>
-                        <p class="team_main_text">НЕКирилл Лопатин</p>
-                        <p class="team__subtext fs-regular">Connected to AI Diagnostic services simultaneously</p>
-                    </div>
-                </div>
-
-                <div class="team_cards_mob">
-                    <div class="cards_mob_imgs">
-                        <img src="./images/disigner.png" alt="Designer" id="team1" class="cards_mob_img active_team_img">
-                        <img src="./images/disigner.png" alt="Designer" id="team2" class="cards_mob_img">
-                        <img src="./images/disigner.png" alt="Designer" id="team3" class="cards_mob_img ">
-                        <img src="./images/disigner.png" alt="Designer" id="team4" class="cards_mob_img">
-                    </div>
-
-                    <div class="cards_mob_description">
-                        <div class="cards_mob_item active_team_item">
-                            <p class="team_main_text">UX-designer, Take a place</p>
-                            <p class="team_name">Захар Садыков</p>
-                            <p class="team__subtext fs-regular">«подписка Take a place помогает мне найти переговорку в нужное время в нужном месте»</p>
-                        </div>
-                        <div class="cards_mob_item">
-                            <p class="team_main_text">UX-designer</p>
-                            <p class="team_name">Захар Садыков</p>
-                            <p class="team__subtext fs-regular">«У меня такая работа, что приходится постоянно встречаться с заказчиком для обсуждения работы, подписка Take a place помогает мне найти переговорку в нужное время в нужном месте»</p>
-                        </div>
-                        <div class="cards_mob_item">
-                            <p class="team_main_text">Take a place</p>
-                            <p class="team_name">Захар Садыков</p>
-                            <p class="team__subtext fs-regular">«У меня такая работа, что приходится постоянно встречаться с заказчиком для обсуждения работы, подписка Take a place помогает мне найти переговорку в нужное время в нужном месте»</p>
-                        </div>
-                        <div class="cards_mob_item">
-                            <p class="team_main_text">UX-designer, Take a place</p>
-                            <p class="team_name">Захар</p>
-                            <p class="team__subtext fs-regular">«У меня такая работа, что приходится постоянно встречаться с заказчиком для обсуждения работы, подписка Take a place помогает мне найти переговорку в нужное время в нужном месте»</p>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="team_cards_mob team_cards_mob_hidden">
-                    <div class="cards_mob_imgs">
-                        <img src="./images/disigner.png" alt="Designer" id="team5" class="cards_mob_img active_team_img">
-                        <img src="./images/disigner.png" alt="Designer" id="team6" class="cards_mob_img">
-                        <img src="./images/disigner.png" alt="Designer" id="team7" class="cards_mob_img">
-                        <img src="./images/disigner.png" alt="Designer" id="team8" class="cards_mob_img">
-                    </div>
-                    <div class="cards_mob_description">
-                        <div class="cards_mob_item active_team_item">
-                            <p class="team_main_text">UX-designer, Take a place</p>
-                            <p class="team_name">Захар Садыков</p>
-                            <p class="team__subtext fs-regular">«У меня такая работа, что приходится постоянно встречаться с заказчиком для обсуждения работы, подписка Take a place помогает мне найти переговорку в нужное время в нужном месте»</p>
-                        </div>
-                        <div class="cards_mob_item">
-                            <p class="team_main_text">UX-designer</p>
-                            <p class="team_name">Захар Садыков</p>
-                            <p class="team__subtext fs-regular">«У меня такая работа, что приходится постоянно встречаться с заказчиком для обсуждения работы, подписка Take a place помогает мне найти переговорку в нужное время в нужном месте»</p>
-                        </div>
-                        <div class="cards_mob_item">
-                            <p class="team_main_text">Take a place</p>
-                            <p class="team_name">Захар Садыков</p>
-                            <p class="team__subtext fs-regular">«У меня такая работа, что приходится постоянно встречаться с заказчиком для обсуждения работы, подписка Take a place помогает мне найти переговорку в нужное время в нужном месте»</p>
-                        </div>
-                        <div class="cards_mob_item">
-                            <p class="team_main_text">UX-designer, Take a place</p>
-                            <p class="team_name">Захар</p>
-                            <p class="team__subtext fs-regular">«У меня такая работа, что приходится постоянно встречаться с заказчиком для обсуждения работы, подписка Take a place помогает мне найти переговорку в нужное время в нужном месте»</p>
-                        </div>
-                        
-                    </div>
-                </div>
-
-            </div>
+            
             <div class="separation__block wow fadeIn" data-wow-duration="1s" data-wow-iteration="1" id="contact">
                 <div class="separation__heading">Contact us</div>
                 <p class="separation__main__text"> We are looking for partners who <br><span
@@ -593,17 +522,14 @@
                                     <label for="name" class="form__label">Name</label>
                                 </div>
                                 <div class="form__group">
-                                    <!-- <select class="form__country__selector" name="country" id="country">
-                                        
-
-                                    </select> -->
+                                    
                                     <input type="text" id="phone" class="form__field" placeholder=" " value>
                                     <label for="phone" class="form__label">Phone number</label>
                                 </div>
                             </div>
                             <div class="flexcont">
                                 <div class="form__group">
-                                    <!-- <input type="" id="list" class="form__field" placeholder="Your Email"> -->
+                                    
                                     <select class="form__field form__field_select" id="list">
                                         <option disabled value="" selected>Select from the list</option>
                                         <option value="research">Research</option>
@@ -643,8 +569,6 @@
                             <li class="nav_item"><a href="#benefits" class="footer_link fs-regular">Benefits</a></li>
                             <li class="nav_item">|</li>
                             <li class="nav_item"><a href="#capabilities" class="footer_link fs-regular">Capabilities</a></li>
-                            <li class="nav_item">|</li>
-                            <li class="nav_item"><a href="#team" class="footer_link fs-regular">Team</a></li>
                         </ul>
                     </div>
                     <p class="copyrights">© 2023 AIDiagnostic. All Rights Reserved</p>
@@ -653,7 +577,7 @@
         </main>
     </div>
     <script src="https://unpkg.com/imask"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.min.js"></script>
 </body>
 
 </html>
