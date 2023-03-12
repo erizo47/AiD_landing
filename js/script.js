@@ -51,8 +51,8 @@ class Accordion {
       // Set the keyframes from the startHeight to endHeight
       height: [startHeight, endHeight]
     }, {
-      duration: 100,
-      easing: 'ease-out'
+      duration: 150,
+      easing: 'ease'
     });
 
     // When the animation is complete, call onAnimationFinish()
@@ -89,7 +89,7 @@ class Accordion {
       // Set the keyframes from the startHeight to endHeight
       height: [startHeight, endHeight]
     }, {
-      duration: 100,
+      duration: 150,
       easing: 'ease-out'
     });
     // When the animation is complete, call onAnimationFinish()
@@ -195,6 +195,9 @@ function nav () {
 let team_member_img = document.querySelectorAll('.cards_mob_img');
 let team_member_item = document.querySelectorAll('.cards_mob_item');
 
+const lumbar_spine_y = document.getElementById('view_lumbar_spine_y');
+const lumbar_spine_x = document.getElementById('view_lumbar_spine_x');
+
 function switchActiveTeamMember() {
   team_member_img.forEach((x) => {
     x.addEventListener('click', (e) => {
@@ -206,6 +209,7 @@ function switchActiveTeamMember() {
 
       [...team_member_item].forEach((el) => el.classList.remove('active_team_item'));
       team_member_item[active_index].classList.add('active_team_item');
+
     })
   })
   
@@ -215,15 +219,44 @@ function switchActiveTeamMember() {
 const module_items = document.querySelectorAll('.module_item');
 const viewer = document.getElementById('viewer');
 const view_images = document.querySelectorAll('.view_images');
-const markup_btn = document.getElementById('markup_btn');
 
 let view_container = document.getElementById('view_lung_nodules');
-let markUp = true;
-
 let viewer_background = ['#262626', '#252525'];
 
 const screenWidth = window.screen.width
 const module_text = document.querySelectorAll('.module_text');
+
+const markup_btn = document.getElementById('markup_btn');
+const show_axial = document.getElementById('show_axial');
+
+let markUp = true;
+let axial = true;
+let useSpine = false; 
+
+function switchAxial() {
+  useSpine = true;
+  if (axial) {
+    axial = false;
+    markUp = true;
+    view_container = lumbar_spine_y;
+    lumbar_spine_x.style.display = 'none';
+    lumbar_spine_y.style.display = 'block';
+    lumbar_spine_y.firstElementChild.style.opacity = 1;
+    lumbar_spine_y.lastElementChild.style.opacity = 0;
+    show_axial.textContent = 'Show sagittal';
+
+  } else {
+    axial = true;
+    markUp = true; 
+    view_container = lumbar_spine_x;
+    lumbar_spine_y.style.display = 'none';
+    lumbar_spine_x.style.display = 'block';
+    lumbar_spine_x.firstElementChild.style.opacity = 1;
+    lumbar_spine_x.lastElementChild.style.opacity = 0;
+    show_axial.textContent = 'Show axial';
+  }
+}
+
 
 function removeViewImagesActive() {
   [...view_images].forEach((el) => el.classList.remove('view_images_active'));
@@ -234,6 +267,12 @@ function removeViewImagesActive() {
   markup_btn.textContent = 'Hide the markup';
   viewer.style.background = viewer_background[0];
 
+  show_axial.style.display = 'none';
+  if (useSpine) {
+    lumbar_spine_y.style.display = 'none';
+    lumbar_spine_x.style.display = 'none';
+  }
+  
 }
 
 function switchActiveModule() {
@@ -275,8 +314,21 @@ function switchActiveModule() {
           removeViewImagesActive();
           break;
         case "lumbar_spine":
-          view_container = document.getElementById('view_lumbar_spine');
+          view_container = document.getElementById('view_lumbar_spine_x');
           viewer_background = ['#000000', '#000000'];
+          removeViewImagesActive();
+          view_container.style.display = "block";
+
+          show_axial.style.display = 'block';
+          useSpine = true;
+          axial = true;
+          markup_btn.style.width = "100%";
+          show_axial.style.width = "100%";
+
+          break;
+        case "aortic_aneurysm":
+          view_container = document.getElementById('view_aortic_aneurysm');
+          viewer_background = ['#111111', '#000000'];
           removeViewImagesActive();
           break;
       }
@@ -302,6 +354,7 @@ function switchMarkUp () {
 
  }
 }
+
 
 
 

@@ -582,12 +582,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-#view_lumbar_spine img {
-  width: 100%;
-  height: auto;
-  top: 0;
-  bottom: 0;
-}
+
 
 .view_images_active {
   display: block;
@@ -607,7 +602,13 @@ summary::-webkit-details-marker {
   margin: auto;
   transition: 1s;
 }
-
+.viewer_btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
 .markup_btn {
   background: #F0F0F0;
   color: #353535;
@@ -624,7 +625,9 @@ summary::-webkit-details-marker {
   background: #EAEAEA;
   transition: 0.3s;
 }
-
+.show_axial {
+  display: none;
+}
 /* -------------------------- */
 .about_us__block {
   padding: 72px 0px;
@@ -870,7 +873,6 @@ summary::-webkit-details-marker {
 }
 
 .scenarios__content {
-  margin-top: -10px;
   padding-bottom: 24px;
   font-weight: 400;
   line-height: 25px;
@@ -1460,11 +1462,10 @@ textarea {
   }
   .form__label_select, .form__field_select:focus ~ .form__label_select {
     position: absolute;
-    top: -15px;
     font-weight: 600;
     display: block;
     transition: 0.2s;
-    font-size: 16px;
+    font-size: 12px;
     color: #9b9b9b;
   }
   .form__field_select:focus ~ .form__label_select {
@@ -1564,7 +1565,7 @@ textarea {
   }
   /*  */
   .module_item {
-    min-width: 170px;
+    min-width: 177px;
   }
   .module_name {
     font-size: 16px;
@@ -1577,6 +1578,7 @@ textarea {
   }
   .markup_btn {
     width: 100%;
+    padding: 16px 0;
   }
   /*  */
   .separation__heading {
@@ -1697,9 +1699,7 @@ textarea {
   .scenarios__header p {
     width: 75%;
   }
-  .form__label_select, .form__field_select:focus ~ .form__label_select {
-    top: -25px;
-  }
+  
   .flexcont_select_email {
     flex-direction: column;
   }
@@ -2072,9 +2072,6 @@ textarea {
   .form__group {
     height: auto;
     width: 100%;
-  }
-  .form__label_select {
-    margin-top: 10px;
   }
   .contacts {
     padding: 32px 24px;
