@@ -449,7 +449,7 @@ summary::-webkit-details-marker {
   width: 14.14px;
   height: 14.14px;
   border-radius: 100%;
-  background: #008981;
+  background: #B0B0B0;
 }
 
 .module_accuracy_item > .small__circle {
@@ -472,7 +472,7 @@ summary::-webkit-details-marker {
 .small__square {
   width: 12.19px;
   height: 12.19px;
-  background: #008981;
+  background: #B0B0B0;
   border-radius: 1px;
 }
 
@@ -1478,9 +1478,6 @@ textarea {
   }
   .viewer__container {
     flex-direction: column;
-  }
-  .accuracy__description {
-    display: none;
   }
   .choose__module {
     width: 100%;
