@@ -223,7 +223,7 @@ const view_images = document.querySelectorAll('.view_images');
 let view_container = document.getElementById('view_lung_nodules');
 let viewer_background = ['#262626', '#252525'];
 
-const screenWidth = window.screen.width
+let screenWidth = window.innerWidth;
 const module_text = document.querySelectorAll('.module_text');
 
 const markup_btn = document.getElementById('markup_btn');
@@ -272,7 +272,14 @@ function removeViewImagesActive() {
     lumbar_spine_y.style.display = 'none';
     lumbar_spine_x.style.display = 'none';
   }
-  
+  screenWidth = window.innerWidth
+  console.log(screenWidth);
+  if (screenWidth > 640 ) {
+    markup_btn.style.width = "auto";
+  } else if (screenWidth <= 640 ) {
+    markup_btn.style.width = "100%";
+  }
+   
 }
 
 function switchActiveModule() {

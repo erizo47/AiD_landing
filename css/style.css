@@ -1066,7 +1066,7 @@ summary::-webkit-details-marker {
 }
 
 .contacts__list {
-  margin-top: 24px;
+  margin-top: 52px;
 }
 
 .contacts__item {
@@ -1226,7 +1226,11 @@ textarea {
   align-items: center;
   margin-top: 24px;
 }
-
+.select_svg {
+  position: absolute;
+  right: 0;
+  top: 25px;
+}
 .terms {
   width: 50%;
   margin-right: 10px;
