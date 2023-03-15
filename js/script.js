@@ -362,8 +362,42 @@ function switchMarkUp () {
  }
 }
 
+const form = document.getElementById('contact_form');
+const modal = document.getElementById('modal_container');
 
+async function handleForm(e) {
+  e.preventDefault();
+  // console.log('submit');
+  let formData = new FormData(form)
+  const formDataObj = {};
+  formData.forEach((value, key) => (formDataObj[key] = value));
 
+  // let url = form.action;
+  // console.log(formDataObj);
+  // await sendForm(url, formDataObj)
+  
+  openModal();
+  setTimeout(()=> {
+    closeModal();
+  }, 50000)
+};
+
+// async function sendForm(url, formDataObj) {
+//   return await fetch(url, {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: formDataObj,
+//   })
+// }
+
+function openModal() {
+  modal.style.display = 'flex';
+}
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+form.addEventListener('submit', handleForm);
 
 let phoneMask = IMask(
   document.getElementById('phone'), {

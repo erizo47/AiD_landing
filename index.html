@@ -526,7 +526,7 @@
 
                 </div>
                 <div class="form__block">
-                    <form action="" class="form">
+                    <form action="" class="form" id="contact_form" >
                         <p class="form__header">Fill the form</p>
                         <p class="form__description fs-regular">To get demo access to existing products or become an
                             investor in
@@ -534,18 +534,18 @@
                         <div class="form__inputs">
                             <div class="flexcont">
                                 <div class="form__group">
-                                    <input type="text" id="name" class="form__field" placeholder=" " maxlength="30" >
+                                    <input type="text" id="name" name="name" class="form__field" placeholder=" " maxlength="30" required>
                                     <label for="name" class="form__label">Name</label>
                                 </div>
                                 <div class="form__group">
                                     
-                                    <input type="text" id="phone" class="form__field" placeholder=" " value>
+                                    <input type="text" id="phone" name="phone" class="form__field" placeholder=" " value required>
                                     <label for="phone" class="form__label">Phone number</label>
                                 </div>
                             </div>
                             <div class="flexcont flexcont_select_email">
                                 <div class="form__group">
-                                    <select class="form__field form__field_select" id="list">
+                                    <select class="form__field form__field_select" id="list" name="select">
                                         <option disabled value="" selected>
                                             <span>
                                                 Select from the list
@@ -565,13 +565,13 @@
                                     </svg>
                                 </div>
                                 <div class="form__group">
-                                    <input type="email" id="email" class="form__field" placeholder=" ">
+                                    <input type="email" id="email" name="email" class="form__field" placeholder=" " required>
                                     <label for="email" class="form__label">Email</label>
                                 </div>
                             </div>
                             <div class="flexcont">
                             <div class="form__group">
-                                <textarea type="text" id="message" class="form__field" placeholder=" " rows="1"></textarea>
+                                <textarea type="text" id="message" name="message" class="form__field" placeholder=" " rows="1"></textarea>
                                 <label for="message" class="form__label">Write your message</label>
                             </div>
                             </div>
@@ -579,7 +579,7 @@
                         </div>
                         <div class="form_btn_block">
                             <p class="terms">By clicking the button below, you agree to the Terms of Service and accept the Global Privacy Policy.</p>
-                            <button type="submit" class="form__button">Send message</button>
+                            <button type="submit" class="form__button" id="form__button">Send message</button>
                         </div>
                     </form>
                 </div>
@@ -602,6 +602,14 @@
                 </div>
             </footer>
         </main>
+    </div>
+    <div class="modal_container" id="modal_container" onclick="closeModal()">
+        <div class="modal_block">
+            <img src="images/form_check.svg" alt="send-ok!">
+            <p class="form_main_text">The request has been sent</p>
+            <p class="form_sub_text">Our manager will contact you soon for details</p>
+            <button class="form_close" onclick="closeModal()">Close</button>
+        </div>
     </div>
     <script src="https://unpkg.com/imask"></script>
     <script src="js/script.min.js"></script>
