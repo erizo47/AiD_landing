@@ -389,7 +389,7 @@ async function sendForm(url, formDataObj) {
       'Content-Type': 'application/json',
       'Accept': 'application/json' 
     },
-    body: formDataObj,
+    body: JSON.stringify(formDataObj),
   }).then(responce => responce.json())
   .then(data => console.log(data))
   .catch(error => console.error(error))
