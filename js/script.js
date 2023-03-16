@@ -372,9 +372,9 @@ async function handleForm(e) {
   const formDataObj = {};
   formData.forEach((value, key) => (formDataObj[key] = value));
 
-  // let url = form.action;
-  // console.log(formDataObj);
-  // await sendForm(url, formDataObj)
+  let url = form.action;
+  console.log(formDataObj);
+  await sendForm(url, formDataObj)
   
   openModal();
   setTimeout(()=> {
@@ -382,13 +382,18 @@ async function handleForm(e) {
   }, 50000)
 };
 
-// async function sendForm(url, formDataObj) {
-//   return await fetch(url, {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: formDataObj,
-//   })
-// }
+async function sendForm(url, formDataObj) {
+  return await fetch(url, {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json' 
+    },
+    body: formDataObj,
+  }).then(responce => responce.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error))
+}
 
 function openModal() {
   modal.style.display = 'flex';
